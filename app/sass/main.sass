@@ -1,0 +1,126 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+body
+  color: $dark
+  font-family: $default-font
+  background-color: $light2
+  height: 100%
+
+::selection
+  background-color: $accent1
+  color: $light2
+
+#bar
+  position: fixed
+  transition: 0.1s
+  overflow: hidden
+  top: 0
+  left: 0
+  height: 3px
+  background-color: $accent2
+  z-index: 3
+
+header
+  background-color: $accent1
+  .header_top
+    padding: 30px 0
+  .header_bottom
+    padding: 20px 0
+
+.main
+  max-width: 1525px
+  padding: 50px 100px
+  margin: 0 auto 0 auto
+  display: grid
+  grid-template-columns: 1fr 4fr
+  grid-template-rows: auto
+  grid-gap: 70px
+  nav
+    text-transform: uppercase
+    .list-group
+      .list-group-item
+        background-color: $light1
+        margin: 3px 0
+        padding: 10px 10px
+        color: $accent1
+        font-weight: bold
+        border: none
+        border-radius: 0
+        display: grid
+        grid-template-columns: 1fr 5fr
+        grid-gap: 20px
+        border-left: 3px solid $accent1
+        transition: 0.3s
+        &:hover
+          border-left: 3px solid $accent2
+          .title
+            color: $accent2
+        .icon
+          display: flex
+          justify-content: center
+          align-items: center
+          .fas
+            font-size: 20px
+        .title
+          transition: 0.3s
+          display: flex
+          justify-content: flex-start
+          align-items: center
+      .active
+        background-color: rgba(70, 138, 152, 0.95)
+        color: $accent2
+        transition: 0.3s
+        border-left: 6px solid $accent2
+        &:hover
+          background-color: $accent1
+  .tab-content
+    border: 1px solid rgba(70, 138, 152, 0.2)
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    min-height: 100vh
+    max-height: 100%
+    background-color: $light1
+    padding: 40px 50px
+    .tab-pane
+      max-width: 100%
+      h2
+        margin-bottom: 40px
+        font-size: 30px
+        text-align: center
+        font-weight: bold
+      h3
+        padding-top: 20px
+        border-top: 2px solid rgba(217, 172, 87, 0.5)
+        margin: 30px 0
+        font-size: 25px
+        text-align: center
+      p
+        margin-bottom: 10px
+        font-size: 18px
+      .pictures
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 20px
+        .item
+          margin: 0
+          display: flex
+          justify-content: center
+          align-items: center
+          img
+            width: 100%
+            transition: 0.5s
+            &:hover
+              transform: scale(1.05)
+              -webkit-box-shadow: 0 0 20px 0 rgba(75, 87, 92, 0.75)
+              -moz-box-shadow: 0 0 20px 0 rgba(75, 87, 92, 0.75)
+              box-shadow: 0 0 20px 0 rgba(75, 87, 92, 0.75)
+
+footer
+  background-color: $accent1
+  padding: 80px 0
+
+@import "media"
+// Always at the end
