@@ -11,6 +11,12 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+  .modal-dialog
+    max-width: 700px
+    .modal-content
+      .modal-body
+        img
+          height: 400px
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -21,6 +27,8 @@
       .tab-pane
         .pictures
           grid-template-columns: auto
+  .modal-dialog
+    max-width: 500px
 
 // ≥576px
 +media-breakpoint-down(xs)
