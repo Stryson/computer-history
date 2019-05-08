@@ -21,4 +21,10 @@ $(function () {
 		document.getElementById('bar').style.width = scrolled / (scrollHeight - document.documentElement.clientHeight) * 100 + '%';
 	};
 
+	$('.image').click((e) => {
+		e.preventDefault();
+		
+		console.log(e);
+	});
+
 });
