@@ -5,31 +5,48 @@
 // ≥1200px
 +media-breakpoint-down(lg)
   .main
-    grid-gap: 40px
+    grid-gap: 30px
     grid-template-columns: auto
-    padding: 25px 50px
+    padding: 30px 50px 0
 
 // ≥992px
 +media-breakpoint-down(md)
 
 // ≥768px
 +media-breakpoint-down(sm)
+  header
+    .header-inner
+      padding: 15px 30px
   .main
-    grid-gap: 30px
-    padding: 20px 30px
+    grid-gap: 20px
+    padding: 20px 30px 0
     .tab-content
       .tab-pane
-        .pictures
+        #pictures
           grid-template-columns: auto
+  footer
+    justify-content: center
+    padding: 50px 30px
 
 // ≥576px
 +media-breakpoint-down(xs)
+  header
+    .header-inner
+      padding: 15px 20px
   .main
-    grid-gap: 20px
-    padding: 10px 0
+    grid-gap: 10px
+    padding: 10px 0 0 0
+    nav
+      .list-group
+        .list-group-item
+          border-left: none
+          &:hover
+            border-left: none
     .tab-content
-      padding: 40px 20px
+      padding: 50px 20px
       border: none
+  footer
+    padding: 50px 20px
 
 /*==========  Mobile First  ==========*/
 
