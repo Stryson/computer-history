@@ -39,10 +39,11 @@ header
     display: grid
     grid-template-columns: 1fr 1fr
     grid-gap: 10px
+    font-size: 14px
+    font-weight: 300
     a
       text-decoration: none
       color: $light2
-      font-weight: 300
       &:hover
         color: $light1
     .logo
@@ -69,7 +70,6 @@ header
     .list-group
       .list-group-item
         background-color: $light1
-        margin: 3px 0
         padding: 10px 10px
         color: $accent1
         font-weight: bold
@@ -93,6 +93,8 @@ header
           display: flex
           justify-content: flex-start
           align-items: center
+        &:nth-child(2)
+          margin: 5px 0
       .active
         background-color: rgba(70, 138, 152, 0.95)
         color: $accent2
