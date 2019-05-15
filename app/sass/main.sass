@@ -2,10 +2,12 @@
 @import "fonts"
 @import "libs"
 
+// вместо цветов меняю opacity (плохо)
 // скроллбар на телефоне (позже)
 // фиксированное меню, стрелочка, "бургер"...
-// галерея - расширение
-// менять url (сохранять вкладку при перезагрузке)
+// галерея - расширение (js)
+// менять url при выборе пункта меню
+// сохранять текущий пункт при перезагрузке
 
 body
   color: $dark
@@ -29,9 +31,10 @@ body
 
 header
   background-color: $accent1
+  line-height: 0 // возможно, костыль
   .header-inner
     max-width: 1525px
-    padding: 15px 50px
+    padding: 25px 50px
     margin: 0 auto
     display: grid
     grid-template-columns: 1fr 1fr
@@ -39,13 +42,16 @@ header
     a
       text-decoration: none
       color: $light2
+      font-weight: 300
       &:hover
         color: $light1
     .logo
       display: flex
       justify-content: flex-start
-      .fa-pied-piper-alt
-        font-size: 40px
+      a
+        font-weight: bold
+        text-transform: uppercase
+        font-size: 20px
     .about
       display: flex
       justify-content: flex-end
@@ -73,7 +79,7 @@ header
         grid-template-columns: 1fr 5fr
         grid-gap: 20px
         border-left: 3px solid $accent1
-        transition: 0.3s
+        transition: 0.2s
         &:hover
           border-left: 3px solid $accent2
           color: $accent2
@@ -90,7 +96,7 @@ header
       .active
         background-color: rgba(70, 138, 152, 0.95)
         color: $accent2
-        transition: 0.3s
+        transition: 0.2s
         border-left: 6px solid $accent2
         &:hover
           background-color: $accent1
@@ -106,7 +112,7 @@ header
     .tab-pane
       max-width: 100%
       .title-2
-        margin-bottom: 25px
+        margin-bottom: 20px
         font-size: 30px
         text-align: center
         font-weight: bold

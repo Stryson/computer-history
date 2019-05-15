@@ -1,5 +1,4 @@
 $(function () {
-
 	// полоса прокрутки страницы (вверху)
 	window.onscroll = () => {
 		const scrolled = window.pageXOffset || document.documentElement.scrollTop,
@@ -24,7 +23,7 @@ $(function () {
 	$('.image').click((e) => {
 		e.preventDefault();
 		
-		console.log(e);
+		// console.log(e);
 	});
 
 });
