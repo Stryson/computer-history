@@ -25,6 +25,21 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Core CSS file -->
+    <link rel="stylesheet" href="libs/photoswipe/photoswipe.css">
+
+    <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+         In the folder of skin CSS file there are also:
+         - .png and .svg icons sprite,
+         - preloader.gif (for browsers that do not support CSS animations) -->
+    <link rel="stylesheet" href="libs/photoswipe/default-skin/default-skin.css">
+
+    <!-- Core JS file -->
+    <script src="libs/photoswipe/photoswipe.min.js"></script>
+
+    <!-- UI JS file -->
+    <script src="libs/photoswipe/photoswipe-ui-default.min.js"></script>
 </head>
 
 <body>
@@ -35,10 +50,10 @@
 <header>
     <div class="header-inner">
         <div class="logo">
-            <a href="#">Логотип</a>
+            <a id="logo-link" href="#">Логотип</a>
         </div>
         <div class="about">
-            <a href="#">О проекте</a>
+            <a id="about-link" href="#">О проекте</a>
         </div>
     </div>
 </header>
@@ -209,52 +224,48 @@
         </div>
 
         <div class="tab-pane fade" id="list-gallery" role="tabpanel" aria-labelledby="list-gallery-list">
-            <div id="pictures">
-                <div class="item">
-                    <a class="image" href="#">
-                        <img src="img/gallery_1.jpg" title="" alt="">
+            <div class="my-gallery" id="pictures" itemscope itemtype="http://schema.org/ImageGallery">
+                <figure class="item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a class="image" href="img/gallery_1.jpg" itemprop="contentUrl" data-size="581x581">
+                        <img src="img/gallery_1.jpg" itemprop="thumbnail" alt="Image description"/>
                     </a>
-                </div>
-                <div class="item">
-                    <a class="image" href="#">
-                        <img src="img/gallery_4.jpg" title="" alt="">
+                </figure>
+
+                <figure class="item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a class="image" href="img/gallery_2.jpg" itemprop="contentUrl" data-size="1200x760">
+                        <img src="img/gallery_2.jpg" itemprop="thumbnail" alt="Image description"/>
                     </a>
-                </div>
-                <div class="item">
-                    <a class="image" href="#">
-                        <img src="img/gallery_3.jpg" title="" alt="">
+                </figure>
+
+                <figure class="item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a class="image" href="img/gallery_3.jpg" itemprop="contentUrl" data-size="1200x750">
+                        <img src="img/gallery_3.jpg" itemprop="thumbnail" alt="Image description"/>
                     </a>
-                </div>
-                <div class="item">
-                    <a class="image" href="#">
-                        <img src="img/gallery_1.jpg" title="" alt="">
+                </figure>
+
+                <figure class="item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a class="image" href="img/gallery_4.jpg" itemprop="contentUrl" data-size="1620x2160">
+                        <img src="img/gallery_4.jpg" itemprop="thumbnail" alt="Image description"/>
                     </a>
-                </div>
-                <div class="item">
-                    <a class="image" href="#">
-                        <img src="img/gallery_3.jpg" title="" alt="">
+                </figure>
+
+                <figure class="item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a class="image" href="img/gallery_5.jpg" itemprop="contentUrl" data-size="1080x1080">
+                        <img src="img/gallery_5.jpg" itemprop="thumbnail" alt="Image description"/>
                     </a>
-                </div>
-                <div class="item">
-                    <a class="image" href="#">
-                        <img src="img/gallery_2.jpg" title="" alt="">
+                </figure>
+
+                <figure class="item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a class="image" href="img/gallery_1.jpg" itemprop="contentUrl" data-size="581x581">
+                        <img src="img/gallery_1.jpg" itemprop="thumbnail" alt="Image description"/>
                     </a>
-                </div>
-                <div class="item">
-                    <a class="image" href="#">
-                        <img src="img/gallery_3.jpg" title="" alt="">
+                </figure>
+
+                <figure class="item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a class="image" href="img/gallery_2.jpg" itemprop="contentUrl" data-size="1200x760">
+                        <img src="img/gallery_2.jpg" itemprop="thumbnail" alt="Image description"/>
                     </a>
-                </div>
-                <div class="item">
-                    <a class="image" href="#">
-                        <img src="img/gallery_5.jpg" title="" alt="">
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="image" href="#">
-                        <img src="img/gallery_5.jpg" title="" alt="">
-                    </a>
-                </div>
+                </figure>
             </div>
         </div>
     </div>
@@ -266,6 +277,64 @@
         </small>
     </div>
 </footer>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close"></button>
+
+                <button class="pswp__button pswp__button--fs"></button>
+
+                <button class="pswp__button pswp__button--zoom"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left"></button>
+
+            <button class="pswp__button pswp__button--arrow--right"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="js/scripts.min.js"></script>
 
