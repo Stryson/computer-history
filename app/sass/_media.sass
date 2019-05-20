@@ -12,6 +12,10 @@
       .tab-pane
         #pictures
           grid-template-columns: 1fr 1fr
+          .item
+            .image
+              img
+                height: 300px
 
 // ≥992px
 +media-breakpoint-down(md)
@@ -28,6 +32,10 @@
       .tab-pane
         #pictures
           grid-template-columns: auto
+          .item
+            .image
+              img
+                height: 200px
   footer
     justify-content: center
     padding: 50px 30px

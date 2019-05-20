@@ -3,9 +3,8 @@
 @import "libs"
 
 // вместо цветов меняю opacity (плохо)
-// скроллбар на телефоне (позже)
-// стрелочка "вверх"
-// галерея - исправить открытие фото
+// скроллбар на телефоне (позже) + появление от минимальной высоты страницы
+// галерея - открытие фото
 // менять url при выборе пункта меню (сохранение страницы)
 
 body
@@ -135,7 +134,7 @@ header
       #pictures
         display: grid
         grid-template-columns: 1fr 1fr 1fr
-        grid-gap: 20px
+        grid-gap: 10px
         .item
           display: flex
           justify-content: center
@@ -144,18 +143,17 @@ header
           margin: 0
           &:hover
             z-index: 2
-            transform: scale(1.05)
-            -webkit-box-shadow: 0 0 20px 0 rgba(75, 87, 92, 0.75)
-            -moz-box-shadow: 0 0 20px 0 rgba(75, 87, 92, 0.75)
-            box-shadow: 0 0 20px 0 rgba(75, 87, 92, 0.75)
+            transform: scale(1.02)
+            -webkit-box-shadow: 0 0 10px 0 rgba(75, 87, 92, 0.75)
+            -moz-box-shadow: 0 0 10px 0 rgba(75, 87, 92, 0.75)
+            box-shadow: 0 0 10px 0 rgba(75, 87, 92, 0.75)
           .image
             width: 100%
             height: 100%
             img
               width: 100%
-              height: 300px
+              // height: 300px
               object-fit: cover
-              transition: 0.5s
 
 footer
   max-width: 1525px
