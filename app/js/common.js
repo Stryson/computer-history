@@ -19,6 +19,8 @@ $(function () {
 		// знвчение равно числу от 0 до 1
 		if (scrollHeight >= 2500) {
 			document.getElementById('bar').style.width = scrolled / (scrollHeight - document.documentElement.clientHeight) * 100 + '%';
+		} else {
+			document.getElementById('bar').style.width = '0%';
 		}};
 
 	// PhotoSwipe
