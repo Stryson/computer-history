@@ -2,9 +2,9 @@
 @import "fonts"
 @import "libs"
 
-// скроллбар на телефоне (позже) + появление от минимальной высоты страницы
-// галерея - открытие фото
+// галерея - неадекватное открытие фото(позже)
 // менять url при выборе пункта меню (сохранение страницы)
+// ползунок остается, если перейти в другой пункт меню
 
 body
   color: $additional-shade
@@ -31,7 +31,7 @@ a
 
 header
   background-color: $additional
-  border-bottom: 2px solid $accent1-tone
+  border-bottom: 2px solid $accent1-tint1
   line-height: 0 // возможно, костыль
   .header-inner
     max-width: 1525px
@@ -72,7 +72,7 @@ header
     text-transform: uppercase
     .list-group
       .list-group-item
-        background-color: $accent1-tone
+        background-color: $accent1-tint1
         padding: 10px 10px
         color: $accent1
         font-weight: bold
@@ -104,13 +104,13 @@ header
         &:hover
           background-color: $accent1-shade
   .tab-content
-    border: 1px solid $accent1-tint
+    border: 1px solid $accent1-tint2
     display: flex
     justify-content: center
     align-items: flex-start
     min-height: 100vh
     max-height: 100%
-    background-color: $accent1-tone
+    background-color: $accent1-tint1
     padding: 50px
     .tab-pane
       max-width: 100%
