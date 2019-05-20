@@ -17,8 +17,9 @@ $(function () {
 			);
 
 		// знвчение равно числу от 0 до 1
-		document.getElementById('bar').style.width = scrolled / (scrollHeight - document.documentElement.clientHeight) * 100 + '%';
-	};
+		if (scrollHeight >= 2500) {
+			document.getElementById('bar').style.width = scrolled / (scrollHeight - document.documentElement.clientHeight) * 100 + '%';
+		}};
 
 	// PhotoSwipe
 	var initPhotoSwipeFromDOM = function (gallerySelector) {

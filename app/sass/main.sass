@@ -2,15 +2,14 @@
 @import "fonts"
 @import "libs"
 
-// вместо цветов меняю opacity (плохо)
 // скроллбар на телефоне (позже) + появление от минимальной высоты страницы
 // галерея - открытие фото
 // менять url при выборе пункта меню (сохранение страницы)
 
 body
-  color: $dark
+  color: $additional-shade
   font-family: $default-font
-  background-color: $light2
+  background-color: $additional
   height: 100%
 
 a
@@ -18,7 +17,7 @@ a
 
 ::selection
   background-color: $accent1
-  color: $light2
+  color: $additional
 
 #bar
   position: fixed
@@ -31,8 +30,8 @@ a
   z-index: 3
 
 header
-  background-color: $light2
-  border-bottom: 2px solid $light1
+  background-color: $additional
+  border-bottom: 2px solid $accent1-tone
   line-height: 0 // возможно, костыль
   .header-inner
     max-width: 1525px
@@ -45,7 +44,7 @@ header
     font-weight: 300
     a
       text-decoration: none
-      color: $dark
+      color: $additional-shade
     .logo
       display: flex
       justify-content: flex-start
@@ -73,7 +72,7 @@ header
     text-transform: uppercase
     .list-group
       .list-group-item
-        background-color: $light1
+        background-color: $accent1-tone
         padding: 10px 10px
         color: $accent1
         font-weight: bold
@@ -99,19 +98,19 @@ header
         &:nth-child(2)
           margin: 5px 0
       .active
-        background-color: rgba(70, 138, 152, 0.95)
+        background-color: $accent1
         color: $accent2
         border-left: 6px solid $accent2
         &:hover
-          background-color: $accent1
+          background-color: $accent1-shade
   .tab-content
-    border: 1px solid rgba(70, 138, 152, 0.2)
+    border: 1px solid $accent1-tint
     display: flex
     justify-content: center
     align-items: flex-start
     min-height: 100vh
     max-height: 100%
-    background-color: $light1
+    background-color: $accent1-tone
     padding: 50px
     .tab-pane
       max-width: 100%
@@ -122,7 +121,7 @@ header
         font-weight: bold
       .title-3
         padding-top: 18px
-        border-top: 2px solid rgba(217, 172, 87, 0.5)
+        border-top: 2px solid $accent2-tint
         margin: 20px 0
         font-size: 25px
         text-align: center
@@ -144,9 +143,9 @@ header
           &:hover
             z-index: 2
             transform: scale(1.02)
-            -webkit-box-shadow: 0 0 10px 0 rgba(75, 87, 92, 0.75)
-            -moz-box-shadow: 0 0 10px 0 rgba(75, 87, 92, 0.75)
-            box-shadow: 0 0 10px 0 rgba(75, 87, 92, 0.75)
+            -webkit-box-shadow: 0 0 10px 0 $additional-shade
+            -moz-box-shadow: 0 0 10px 0 $additional-shade
+            box-shadow: 0 0 10px 0 $additional-shade
           .image
             width: 100%
             height: 100%
